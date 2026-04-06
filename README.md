@@ -77,9 +77,6 @@ source .venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
-```
-Если вы увидите Successfully installed ... - зависимости установлены!
-```
 6. Запустите тесты. Для запуска все тестов используйте:
 ```bash
 pytest -v
@@ -90,15 +87,15 @@ pytest -v
 ```bash
 pytest -v -m invalid_posts_values          # Невалидные значения в payload для POST
 pytest -v -m invalid_posts                 # Негативные тесты: отсутствующие обязательные поля
-pytest -v -m invalid_get_item_400          # Невалидный item_id → Bad Request (400)
-pytest -v -m invalid_get_item_404          # Невалидный item_id → Not Found (404)
+pytest -v -m invalid_get_item_400          # Невалидный item_id - Bad Request (400)
+pytest -v -m invalid_get_item_404          # Невалидный item_id - Not Found (404)
 pytest -v -m invalid_get_item_statistics   # Невалидная проверка статистики объявления
 pytest -v -m invalid_get_user_items        # Невалидный seller_id для получения всех items
 pytest -v -m valid_create_item_post        # Успешное создание объявления
 pytest -v -m valid_get_item_by_id          # Получение объявления по item_id
 pytest -v -m valid_get_items_by_user       # Получение всех объявлений пользователя
 pytest -v -m valid_get_item_statistics     # Получение статистики по item_id
-pytest -v -m valid_post_any_value          # Тесты с экстремальными (min/max) значениями
+pytest -v -m valid_post_any_value          # Тесты с экстремальными (малыми/большими) значениями
 ```
 
 ## Для запуск тестов по файлам используйте:
